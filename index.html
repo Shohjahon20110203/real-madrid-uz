@@ -11,30 +11,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Loading Animation -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="img/logo-madrid.png" alt="" width="40px">
+                <span class="loading-text">Real Madrid UZ</span>
+            </div>
+            <div class="loading-spinner"></div>
+            <p class="loading-message">Yuklanmoqda...</p>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m18 15-6-6-6 6"/>
+        </svg>
+    </button>
+
     <!-- Navigation -->
     <header class="navbar">
         <div class="container">
             <div class="nav-content">
-                <a href="#" class="logo">
-                    <svg class="trophy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
-                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
-                        <path d="M4 22h16"/>
-                        <path d="M10 14.66V17c0 .55.47.98.97 1.21C12.15 18.75 14 20 16 20s3.85-1.25 5.03-1.79c.5-.23.97-.66.97-1.21v-2.34"/>
-                        <path d="M20 7v5c0 1.1-.9 2-2 2H6a2 2 0 0 1-2-2V7"/>
-                        <rect width="20" height="4" x="2" y="3" rx="1"/>
-                    </svg>
+                <a href="index.html" class="logo">
+                    <img src="img/logo-madrid.png" alt="" width="40px">
                     <span class="logo-text">Real Madrid UZ</span>
                 </a>
                 
                 <nav class="nav-menu">
                     <a href="#home" class="nav-link active">Bosh Sahifa</a>
-                    <a href="#about" class="nav-link">Klub Haqida</a>
                     <a href="#news" class="nav-link">Yangiliklar</a>
                     <a href="#team" class="nav-link">Jamoa</a>
-                    <a href="#schedule" class="nav-link">Jadval</a>
                     <a href="#media" class="nav-link">Media</a>
-                    <a href="#fans" class="nav-link">Muxlislar</a>
+                    <a href="#" class="nav-link" onclick="openSchedulePage()">Jadval</a>
                 </nav>
                 
                 <div class="nav-actions">
@@ -65,12 +75,10 @@
             <div class="mobile-menu" id="mobileMenu">
                 <nav class="mobile-nav">
                     <a href="#home" class="mobile-nav-link">Bosh Sahifa</a>
-                    <a href="#about" class="mobile-nav-link">Klub Haqida</a>
                     <a href="#news" class="mobile-nav-link">Yangiliklar</a>
                     <a href="#team" class="mobile-nav-link">Jamoa</a>
-                    <a href="#schedule" class="mobile-nav-link">Jadval</a>
                     <a href="#media" class="mobile-nav-link">Media</a>
-                    <a href="#fans" class="mobile-nav-link">Muxlislar</a>
+                    <a href="#" class="mobile-nav-link" onclick="openSchedulePage()">Jadval</a>
                 </nav>
             </div>
         </div>
@@ -81,24 +89,34 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-overlay"></div>
+            <div class="hero-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">
+                    <h1 class="hero-title animate-slide-up">
                         Real Madrid <br>
                         <span class="hero-highlight">O'zbekiston</span> muxlislari uchun
                     </h1>
-                    <p class="hero-description">
+                    <p class="hero-description animate-slide-up-delay">
                         Klubning eng so'nggi yangiliklari, o'yinlar jadvali, 
                         va eksklyuziv kontent - barchasi o'zbek tilida.
                     </p>
-                    <div class="hero-buttons">
+                    <div class="hero-buttons animate-slide-up-delay-2">
                         <a href="#news" class="btn btn-primary">
                             So'nggi Yangiliklar
                             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="m9 18 6-6-6-6"/>
                             </svg>
                         </a>
-                        <a href="#schedule" class="btn btn-secondary">O'yinlar Jadvali</a>
+                        <a href="#" class="btn btn-secondary" onclick="openSchedulePage()">O'yinlar Jadvali</a>
                     </div>
                 </div>
             </div>
@@ -125,15 +143,15 @@
                 <div class="news-grid">
                     <article class="news-card">
                         <div class="news-image">
-                            <img src="https://images.pexels.com/photos/41257/pexels-photo-41257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="News">
+                            <img src="img/latest-news-courtois-img.webp" alt="News">
                         </div>
                         <div class="news-content">
                             <div class="news-meta">
                                 <span class="news-category match">O'yin</span>
-                                <span class="news-date">20 iyul, 2025</span>
+                                <span class="news-date">2 iyul, 2025</span>
                             </div>
-                            <h3 class="news-title">Mbappé Real Madrid uchun debyut o'yinida hat-trik urdi</h3>
-                            <p class="news-summary">Fransiyalik yulduz hujumchi Kylian Mbappé Real Madrid safida birinchi o'yinida ajoyib namoyish ko'rsatdi.</p>
+                            <h3 class="news-title">Kurtua: "Jamoaning himoyadagi majburiyati ajoyib edi"</h3>
+                            <p class="news-summary">"Agar hamma bugungidek yugursa yoki "Zalsburg"ga qarshi o'yinda qatnashsa, jamoalar bizga gol urish juda qiyin", - deya qo'shimcha qildi darvozabon.</p>
                             <a href="#" class="news-link">
                                 Batafsil o'qish
                                 <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -145,16 +163,16 @@
 
                     <article class="news-card">
                         <div class="news-image">
-                            <img src="https://images.pexels.com/photos/10583305/pexels-photo-10583305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="News">
+                            <img src="img/latest-news-xabi-img.webp" alt="News">
                         </div>
                         <div class="news-content">
                             <div class="news-meta">
                                 <span class="news-category club">Klub</span>
-                                <span class="news-date">15 iyul, 2025</span>
+                                <span class="news-date">01 iyul, 2025</span>
                             </div>
-                            <h3 class="news-title">Real Madrid yangi forma dizaynini taqdim etdi</h3>
-                            <p class="news-summary">2025/2026 mavsum uchun Real Madridning yangi formasi taqdim etildi.</p>
-                            <a href="#" class="news-link">
+                            <h3 class="news-title">Xabi Alonso: "Himoyaviy mustahkamlik va intizom asosiy hisoblanadi"</h3>
+                            <p class="news-summary">"Afsuski, biz o'zimizga ustunlik beradigan ikkinchi golni topa olmadik, ammo bu "Yuventus" va biz raqobat qilishimiz kerak", - deya qo'shimcha qildi murabbiy..</p>
+                            <a href="https://www.realmadrid.com/en-US/news/football/first-team/press-conference/rueda-prensa-xabi-alonso-01-07-2025" class="news-link">
                                 Batafsil o'qish
                                 <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="m9 18 6-6-6-6"/>
@@ -165,16 +183,16 @@
 
                     <article class="news-card">
                         <div class="news-image">
-                            <img src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="News">
+                            <img src="img/latest-news-valverde-img.webp" alt="News">
                         </div>
                         <div class="news-content">
                             <div class="news-meta">
                                 <span class="news-category interview">Intervyu</span>
-                                <span class="news-date">10 iyul, 2025</span>
+                                <span class="news-date">1 iyul, 2025</span>
                             </div>
-                            <h3 class="news-title">Bellingham: "Real Madrid bilan o'ynash eng katta faxr"</h3>
-                            <p class="news-summary">Ingliz yarim himoyachisi Jude Bellingham Real Madrid bilan o'ynash haqidagi fikrlarini bildirdi.</p>
-                            <a href="#" class="news-link">
+                            <h3 class="news-title">Valverde, o'yinning eng yaxshi futbolchisi: "Bizda ko'p imkoniyatlar bo'ldi va bu bizning foydamiz"</h3>
+                            <p class="news-summary">"Gonsalo bunga loyiq. U ko'p mehnat qiladi va o'z imkoniyatidan kamtarlik bilan foydalanmoqda", - deya qo'shimcha qildi yarim himoyachi..</p>
+                            <a href="https://www.realmadrid.com/en-US/news/football/first-team/latest-news/jugador-01-07-2025" class="news-link">
                                 Batafsil o'qish
                                 <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="m9 18 6-6-6-6"/>
@@ -182,136 +200,12 @@
                             </a>
                         </div>
                     </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Upcoming Matches Section -->
-        <section id="schedule" class="section section-gray">
-            <div class="container">
-                <h2 class="section-title text-center">Keyingi O'yinlar</h2>
-                <p class="section-subtitle text-center">Real Madridning kelgusi bellashuvlari</p>
-                
-                <div class="matches-grid">
-                    <div class="match-card">
-                        <div class="match-header">
-                            <span class="match-competition">La Liga</span>
-                            <span class="match-countdown">5 kun qoldi</span>
-                        </div>
-                        <div class="match-teams">
-                            <div class="team">
-                                <div class="team-name">Real Madrid</div>
-                            </div>
-                            <div class="vs">VS</div>
-                            <div class="team">
-                                <div class="team-name">Barcelona</div>
-                            </div>
-                        </div>
-                        <div class="match-details">
-                            <div class="match-detail">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-                                </svg>
-                                <span>2025-05-20</span>
-                            </div>
-                            <div class="match-detail">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12,6 12,12 16,14"/>
-                                </svg>
-                                <span>22:00</span>
-                            </div>
-                            <div class="match-detail">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                                <span>Santiago Bernabéu</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="match-card">
-                        <div class="match-header">
-                            <span class="match-competition">UEFA Champions League</span>
-                            <span class="match-countdown">12 kun qoldi</span>
-                        </div>
-                        <div class="match-teams">
-                            <div class="team">
-                                <div class="team-name">Real Madrid</div>
-                            </div>
-                            <div class="vs">VS</div>
-                            <div class="team">
-                                <div class="team-name">Manchester City</div>
-                            </div>
-                        </div>
-                        <div class="match-details">
-                            <div class="match-detail">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-                                </svg>
-                                <span>2025-05-27</span>
-                            </div>
-                            <div class="match-detail">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12,6 12,12 16,14"/>
-                                </svg>
-                                <span>21:00</span>
-                            </div>
-                            <div class="match-detail">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                                <span>Etihad Stadium</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="match-card">
-                        <div class="match-header">
-                            <span class="match-competition">La Liga</span>
-                            <span class="match-countdown">19 kun qoldi</span>
-                        </div>
-                        <div class="match-teams">
-                            <div class="team">
-                                <div class="team-name">Real Madrid</div>
-                            </div>
-                            <div class="vs">VS</div>
-                            <div class="team">
-                                <div class="team-name">Atletico Madrid</div>
-                            </div>
-                        </div>
-                        <div class="match-details">
-                            <div class="match-detail">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-                                </svg>
-                                <span>2025-06-03</span>
-                            </div>
-                            <div class="match-detail">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12,6 12,12 16,14"/>
-                                </svg>
-                                <span>22:00</span>
-                            </div>
-                            <div class="match-detail">
-                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                                <span>Santiago Bernabéu</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Team Highlights Section -->
-        <section id="team" class="section">
+        <section id="team" class="section section-gray">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Jamoa Yulduzlari</h2>
@@ -326,26 +220,11 @@
                 <div class="team-grid">
                     <div class="player-card">
                         <div class="player-image">
-                            <img src="https://images.pexels.com/photos/8948557/pexels-photo-8948557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Kylian Mbappé">
-                            <div class="player-overlay"></div>
-                            <div class="player-number">9</div>
-                            <div class="player-info">
-                                <h3 class="player-name">Kylian Mbappé</h3>
-                                <div class="player-details">
-                                    <span class="player-position">Hujumchi</span>
-                                    <span class="player-nationality">Fransiya</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="player-card">
-                        <div class="player-image">
-                            <img src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Vinícius Júnior">
+                            <img src="img/vini-player.webp" alt="Vini JR">
                             <div class="player-overlay"></div>
                             <div class="player-number">7</div>
                             <div class="player-info">
-                                <h3 class="player-name">Vinícius Júnior</h3>
+                                <h3 class="player-name">Vinicius Junior</h3>
                                 <div class="player-details">
                                     <span class="player-position">Hujumchi</span>
                                     <span class="player-nationality">Braziliya</span>
@@ -356,7 +235,22 @@
 
                     <div class="player-card">
                         <div class="player-image">
-                            <img src="https://images.pexels.com/photos/47343/the-ball-stadion-football-the-pitch-47343.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Jude Bellingham">
+                            <img src="img/kylian-player.jpg" alt="Kylian Mbappe">
+                            <div class="player-overlay"></div>
+                            <div class="player-number">9</div>
+                            <div class="player-info">
+                                <h3 class="player-name">Kylian Mbappe</h3>
+                                <div class="player-details">
+                                    <span class="player-position">Hujumchi</span>
+                                    <span class="player-nationality">Fransiya</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="player-card">
+                        <div class="player-image">
+                            <img src="img/jude-player.png" alt="Jude Bellingham">
                             <div class="player-overlay"></div>
                             <div class="player-number">5</div>
                             <div class="player-info">
@@ -371,7 +265,7 @@
 
                     <div class="player-card">
                         <div class="player-image">
-                            <img src="https://images.pexels.com/photos/1667583/pexels-photo-1667583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Rodrygo">
+                            <img src="img/rodrygo-player.jpg" alt="Rodrygo">
                             <div class="player-overlay"></div>
                             <div class="player-number">11</div>
                             <div class="player-info">
@@ -387,83 +281,231 @@
             </div>
         </section>
 
-        <!-- Social Feed Section -->
-        <section id="media" class="section section-gray">
+        <!-- Media Section -->
+        <section id="media" class="section">
             <div class="container">
-                <h2 class="section-title text-center">Ijtimoiy tarmoqlarda</h2>
-                <p class="section-subtitle text-center">Real Madridning eng yangi post va yangiliklari</p>
-                
-                <div class="social-grid">
-                    <a href="#" class="social-card">
-                        <div class="social-image">
-                            <img src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Social post">
-                        </div>
-                        <div class="social-content">
-                            <div class="social-meta">
-                                <div class="social-platform">
-                                    <svg class="platform-icon instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                                        <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-                                    </svg>
-                                    <span>Instagram</span>
-                                </div>
-                                <span class="social-date">20 iyul</span>
-                            </div>
-                            <p class="social-text">Mbappé Real Madrid uchun birinchi golini urdi! 🔥⚽</p>
-                        </div>
-                    </a>
+                <div class="section-header">
+                    <h2 class="section-title">Media</h2>
+                    <p class="section-subtitle">Foto galereya, videolar va press konferensiyalar</p>
+                </div>
 
-                    <a href="#" class="social-card">
-                        <div class="social-content">
-                            <div class="social-meta">
-                                <div class="social-platform">
-                                    <svg class="platform-icon twitter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-                                    </svg>
-                                    <span>Twitter</span>
-                                </div>
-                                <span class="social-date">18 iyul</span>
-                            </div>
-                            <p class="social-text">Chempionlar Ligasi yarim final: Real Madrid vs Manchester City, 27-may, soat 21:00!</p>
-                        </div>
-                    </a>
+                <!-- Media Tabs -->
+                <div class="media-tabs">
+                    <button class="media-tab active" data-tab="gallery">Foto Galereya</button>
+                    <button class="media-tab" data-tab="videos">Videolar</button>
+                    <button class="media-tab" data-tab="press">Press Konferensiyalar</button>
+                </div>
 
-                    <a href="#" class="social-card">
-                        <div class="social-content">
-                            <div class="social-meta">
-                                <div class="social-platform">
-                                    <svg class="platform-icon telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="m22 2-7 20-4-9-9-4z"/>
-                                        <path d="m22 2-11 10"/>
-                                    </svg>
-                                    <span>Telegram</span>
-                                </div>
-                                <span class="social-date">15 iyul</span>
+                <!-- Photo Gallery -->
+                <div class="media-content active" id="gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="img/stadion-img.jpg" alt="Real Madrid">
+                            <div class="gallery-overlay">
+                                <h4>Santiago Bernabéu</h4>
+                                <p>Stadion ko'rinishi</p>
                             </div>
-                            <p class="social-text">Bellingham: "Real Madrid bilan o'ynash men uchun eng katta faxr." To'liq intervyuni o'qing:</p>
                         </div>
-                    </a>
+                        <div class="gallery-item">
+                            <img src="img/media-training.webp" alt="Training">
+                            <div class="gallery-overlay">
+                                <h4>Mashg'ulot</h4>
+                                <p>Jamoa tayyorgarligi</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="img/media-match.jpg" alt="Match">
+                            <div class="gallery-overlay">
+                                <h4>O'yin Paytida</h4>
+                                <p>La Liga o'yini</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="img/media-goal.avif" alt="Celebration">
+                            <div class="gallery-overlay">
+                                <h4>Nishonlash</h4>
+                                <p>Gol bayramida</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="img/meadi-trophy.avif" alt="Trophy">
+                            <div class="gallery-overlay">
+                                <h4>Kubok Marosimi</h4>
+                                <p>Champions League</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="img/media-fans.jpg" alt="Fans">
+                            <div class="gallery-overlay">
+                                <h4>Muxlislar</h4>
+                                <p>Stadion tribunalari</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <a href="#" class="social-card">
-                        <div class="social-image">
-                            <img src="https://images.pexels.com/photos/41257/pexels-photo-41257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Social post">
-                        </div>
-                        <div class="social-content">
-                            <div class="social-meta">
-                                <div class="social-platform">
-                                    <svg class="platform-icon instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                                        <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                <!-- Videos -->
+                <div class="media-content" id="videos">
+                    <div class="videos-grid">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/EZwrfPfMaAU?si=sxqxU0rKi1fnBLpf" target="_blank">
+                                <img src="img/mbappe-goal.webp" alt="Video">
+                                </a>
+                                <div class="play-button">
+                                    <a href="https://youtu.be/EZwrfPfMaAU?si=sxqxU0rKi1fnBLpf" target="_blank">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <polygon points="5,3 19,12 5,21"/>
                                     </svg>
-                                    <span>Instagram</span>
+                                    </a>
                                 </div>
-                                <span class="social-date">12 iyul</span>
                             </div>
-                            <p class="social-text">Santiago Bernabéu stadionida navbatdagi El Clásico uchun tayyorgarlik boshlandi! 💪</p>
+                            <div class="video-info">
+                                <h4>Mbappé Eng Yaxshi Gollar</h4>
+                                <p>2024-2025 yilgi eng ajoyib gollar to'plami</p>
+                                <span class="video-duration">10:01</span>
+                            </div>
                         </div>
-                    </a>
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/cejWvQsz5qo?si=G1q_JCcBMO1yBg3e" target="_blank">
+                                <img src="img/video-trainig.jpg" alt="Video">
+                                </a>
+                                <div class="play-button">
+                                    <a href="https://youtu.be/cejWvQsz5qo?si=G1q_JCcBMO1yBg3e" target="_blank">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h4>Mashg'ulot Orqasida</h4>
+                                <p>Jamoa tayyorgarlik jarayoni</p>
+                                <span class="video-duration">16:19</span>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/mehowAKnyGM?si=ltLxXPFvEeePsXL6" target="_blank">
+                                <img src="img/video-jude.jpg" alt="Video">
+                                </a>
+                                <div class="play-button">
+                                    <a href="https://youtu.be/mehowAKnyGM?si=ltLxXPFvEeePsXL6" target="_blank">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h4>Bellingham Intervyusi</h4>
+                                <p>Yangi mavsum haqida fikrlar</p>
+                                <span class="video-duration">12:45</span>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/lZm5fn-t8bI?si=RHD-jYFmyOWQXmCg" target="_blank">
+                                <img src="img/video-highlight.webp" alt="Video">
+                                </a>
+                                <div class="play-button">
+                                    <a href="https://youtu.be/lZm5fn-t8bI?si=RHD-jYFmyOWQXmCg" target="_blank">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h4>El Clasico Highlights</h4>
+                                <p>Barcelona qarshi eng yaxshi daqiqalar</p>
+                                <span class="video-duration">13:20</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--    -->
+                <div class="media-content" id="press">
+                    <div class="press-list">
+                        <div class="press-item">
+                            <div class="press-date">
+                                <span class="day">20</span>
+                                <span class="month">Iyul</span>
+                            </div>
+                            <div class="press-content">
+                                <h4>Ancelotti: "Mbappé bizga yangi energiya berdi"</h4>
+                                <p>Bosh murabbiy yangi transfer va jamoa holati haqida gapirdi</p>
+                                <div class="press-meta">
+                                    <span class="press-type">Press konferensiya</span>
+                                    <span class="press-duration">25 daqiqa</span>
+                                </div>
+                            </div>
+                            <button class="press-play">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="press-item">
+                            <div class="press-date">
+                                <span class="day">15</span>
+                                <span class="month">Iyul</span>
+                            </div>
+                            <div class="press-content">
+                                <h4>Mbappé: "Real Madrid - mening orzuim edi"</h4>
+                                <p>Fransiyalik yulduz o'zining yangi klubi haqida</p>
+                                <div class="press-meta">
+                                    <span class="press-type">Intervyu</span>
+                                    <span class="press-duration">18 daqiqa</span>
+                                </div>
+                            </div>
+                            <button class="press-play">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="press-item">
+                            <div class="press-date">
+                                <span class="day">10</span>
+                                <span class="month">Iyul</span>
+                            </div>
+                            <div class="press-content">
+                                <h4>Bellingham: "Yangi mavsum uchun tayyormiz"</h4>
+                                <p>Ingliz yarim himoyachisi jamoa maqsadlari haqida</p>
+                                <div class="press-meta">
+                                    <span class="press-type">Press konferensiya</span>
+                                    <span class="press-duration">22 daqiqa</span>
+                                </div>
+                            </div>
+                            <button class="press-play">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="press-item">
+                            <div class="press-date">
+                                <span class="day">05</span>
+                                <span class="month">Iyul</span>
+                            </div>
+                            <div class="press-content">
+                                <h4>Perez: "Real Madrid kelajagi yorqin"</h4>
+                                <p>Klub prezidenti yangi loyihalar haqida</p>
+                                <div class="press-meta">
+                                    <span class="press-type">Press konferensiya</span>
+                                    <span class="press-duration">35 daqiqa</span>
+                                </div>
+                            </div>
+                            <button class="press-play">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -489,16 +531,29 @@
                         Real Madrid klubi muxlislari uchun O'zbekistondagi rasmiy fan-sayti.
                     </p>
                     <div class="footer-social">
-                        <a href="#" class="social-link">
+                        <a href="https://instagram.com/shohjahon2011_blog" class="social-link" title="Instagram">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
                                 <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://t.me/shohjahon2011_blog" class="social-link" title="Telegram">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a205.66 205.66 0 0 1-2.849 1.09c-.42.15-.593.27-.593.442 0 .173.173.293.593.442.42.15 1.537.593 2.849 1.09 1.591.612 3.656 1.41 5.724 2.21l8.609 3.33c.42.15.742.215 1.022.215.28 0 .593-.065.742-.215.15-.15.215-.442.215-.742V3.175c0-.3-.065-.593-.215-.742a1.186 1.186 0 0 0-.742-.215z"/>
+                                <path d="m10.5 11.5 8.5-6.5-8.5 6.5z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@shoh-coder" class="social-link" title="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/>
+                                <polygon points="10,15 15,12 10,9"/>
+                            </svg>
+                        </a>
+                        <a href="https:/github.com/shohjahon20110203" class="social-link" title="GitHub">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                                <path d="M9 18c-4.51 2-5-2-7-2"/>
                             </svg>
                         </a>
                     </div>
@@ -508,20 +563,10 @@
                     <h3 class="footer-title">Tezkor Havolalar</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Bosh Sahifa</a></li>
-                        <li><a href="#about">Klub Haqida</a></li>
                         <li><a href="#news">Yangiliklar</a></li>
                         <li><a href="#team">Jamoa</a></li>
-                        <li><a href="#schedule">Jadval</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3 class="footer-title">Qo'shimcha</h3>
-                    <ul class="footer-links">
                         <li><a href="#media">Media</a></li>
-                        <li><a href="#fans">O'zbekiston Muxlislari</a></li>
-                        <li><a href="#">Maxfiylik Siyosati</a></li>
-                        <li><a href="#">Foydalanish Shartlari</a></li>
+                        <li><a href="#" onclick="openSchedulePage()">Jadval</a></li>
                     </ul>
                 </div>
                 
@@ -533,13 +578,13 @@
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
                             </svg>
-                            <span>info@realmadriduz.com</span>
+                            <span>uzbuzb314@gmail.com</span>
                         </div>
                         <div class="contact-item">
                             <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                             </svg>
-                            <span>+998 71 123 4567</span>
+                            <span>+998 88 523 83 93</span>
                         </div>
                     </div>
                 </div>

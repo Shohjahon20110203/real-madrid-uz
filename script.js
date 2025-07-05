@@ -133,14 +133,26 @@ class NavigationManager {
     }
 
     setupSmoothScrolling() {
-        const links = document.querySelectorAll('a[href^="#"]');
+        const links = document.querySelectorAll('.nav-menu a[href^="#"], .mobile-nav a[href^="#"]');
         
         links.forEach(link => {
             link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                
+                // Skip if href is just "#" (placeholder link)
+                if (href === '#') {
+                    e.preventDefault();
+                    return;
+                }
+                
+                // Skip if it's an external link or doesn't start with #
+                if (!href.startsWith('#')) {
+                    return;
+                }
+                
                 e.preventDefault();
                 
-                const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                const targetElement = document.querySelector(href);
                 
                 if (targetElement) {
                     const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
@@ -150,6 +162,108 @@ class NavigationManager {
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+    }
+}
+
+// Loading Screen Manager
+class LoadingManager {
+    constructor() {
+        this.loadingScreen = document.getElementById('loadingScreen');
+        this.init();
+    }
+
+    init() {
+        // Hide loading screen after page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                this.hideLoadingScreen();
+            }, 1500); // Show loading for at least 1.5 seconds
+        });
+    }
+
+    hideLoadingScreen() {
+        if (this.loadingScreen) {
+            this.loadingScreen.classList.add('hidden');
+            
+            // Remove from DOM after transition
+            setTimeout(() => {
+                this.loadingScreen.remove();
+            }, 500);
+        }
+    }
+}
+
+// Scroll to Top Manager
+class ScrollToTopManager {
+    constructor() {
+        this.scrollButton = document.getElementById('scrollToTop');
+        this.init();
+    }
+
+    init() {
+        if (!this.scrollButton) return;
+
+        this.setupScrollListener();
+        this.setupClickListener();
+    }
+
+    setupScrollListener() {
+        let ticking = false;
+
+        const updateButton = () => {
+            if (window.scrollY > 300) {
+                this.scrollButton.classList.add('visible');
+            } else {
+                this.scrollButton.classList.remove('visible');
+            }
+            ticking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateButton);
+                ticking = true;
+            }
+        });
+    }
+
+    setupClickListener() {
+        this.scrollButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
+
+// Media Section Manager
+class MediaManager {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.setupMediaTabs();
+    }
+
+    setupMediaTabs() {
+        const tabButtons = document.querySelectorAll('.media-tab');
+        const tabContents = document.querySelectorAll('.media-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
             });
         });
     }
@@ -181,7 +295,7 @@ class AnimationManager {
 
         // Observe elements that should animate on scroll
         const animatedElements = document.querySelectorAll(
-            '.news-card, .match-card, .player-card, .social-card'
+            '.news-card, .match-card, .player-card, .gallery-item, .video-card, .press-item'
         );
         
         animatedElements.forEach(el => observer.observe(el));
@@ -203,6 +317,11 @@ class AnimationManager {
         // Add a subtle pulse animation to countdown elements
         element.style.animation = 'pulse 2s infinite';
     }
+}
+
+// Schedule Page Functions
+function openSchedulePage() {
+    window.open('schedule.html', '_blank');
 }
 
 // Utility Functions
@@ -304,6 +423,9 @@ class RealMadridApp {
     constructor() {
         this.themeManager = new ThemeManager();
         this.navigationManager = new NavigationManager();
+        this.loadingManager = new LoadingManager();
+        this.scrollToTopManager = new ScrollToTopManager();
+        this.mediaManager = new MediaManager();
         this.animationManager = new AnimationManager();
         this.performanceManager = new PerformanceManager();
         this.errorHandler = new ErrorHandler();

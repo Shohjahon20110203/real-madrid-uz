@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'yinlar Jadvali - Real Madrid UZ</title>
+    <meta name="description" content="Real Madrid o'yinlar jadvali, turnir natijalari va to'purarlar ro'yhati">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <svg class="trophy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                        <path d="M4 22h16"/>
+                        <path d="M10 14.66V17c0 .55.47.98.97 1.21C12.15 18.75 14 20 16 20s3.85-1.25 5.03-1.79c.5-.23.97-.66.97-1.21v-2.34"/>
+                        <path d="M20 7v5c0 1.1-.9 2-2 2H6a2 2 0 0 1-2-2V7"/>
+                        <rect width="20" height="4" x="2" y="3" rx="1"/>
+                    </svg>
+                    <span class="logo-text">Real Madrid UZ</span>
+                </a>
+                
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Bosh Sahifa</a>
+                    <a href="index.html#news" class="nav-link">Yangiliklar</a>
+                    <a href="index.html#team" class="nav-link">Jamoa</a>
+                    <a href="#" class="nav-link active">Jadval</a>
+                </nav>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="schedule-main">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">O'yinlar Jadvali</h1>
+                <p class="page-subtitle">Real Madrid o'yinlari, turnir jadvali va to'purarlar ro'yhati</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="fixtures">Kelgusi O'yinlar</button>
+                <button class="tab-btn" data-tab="results">Natijalar</button>
+                <button class="tab-btn" data-tab="table">Turnir Jadvali</button>
+                <button class="tab-btn" data-tab="scorers">To'purarlar</button>
+            </div>
+
+            <!-- Fixtures Tab -->
+            <div class="tab-content active" id="fixtures">
+                <div class="matches-container">
+                    <div class="match-card-large">
+                        <div class="match-header">
+                            <span class="match-competition">La Liga </span>
+                            <span class="match-date">26.10.2025</span>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team home">
+                                <div class="team-logo"><img src="img/logo-madrid.png" alt="" width="32px"></div>
+                                <div class="team-name">Real Madrid</div>
+                            </div>
+                            <div class="match-time">
+                                <span class="time">Vaqti aniq emas</span>
+                                <span class="countdown">10-tur</span>
+                            </div>
+                            <div class="team away">
+                                <div class="team-logo"><img src="img/logo-barca.png" alt="" width="32px"></div>
+                                <div class="team-name">Barcelona</div>
+                            </div>
+                        </div>
+                        <div class="match-venue">
+                            <svg class="venue-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>Santiago Bernabéu</span>
+                        </div>
+                    </div>
+
+                    <div class="match-card-large">
+                        <div class="match-header">
+                            <span class="match-competition">Laliga</span>
+                            <span class="match-date">2025-05-27</span>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team home">
+                                <div class="team-logo">MCI</div>
+                                <div class="team-name">Manchester City</div>
+                            </div>
+                            <div class="match-time">
+                                <span class="time">21:00</span>
+                                <span class="countdown">12 kun qoldi</span>
+                            </div>
+                            <div class="team away">
+                                <div class="team-logo"><img src="img/logo-Osasuna.png" alt="" width="32px"></div>
+                                <div class="team-name">Osasuna</div>
+                            </div>
+                        </div>
+                        <div class="match-venue">
+                            <svg class="venue-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>Etihad Stadium</span>
+                        </div>
+                    </div>
+
+                    <div class="match-card-large">
+                        <div class="match-header">
+                            <span class="match-competition">La Liga</span>
+                            <span class="match-date">2025-06-03</span>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team home">
+                                <div class="team-logo">RM</div>
+                                <div class="team-name">Real Madrid</div>
+                            </div>
+                            <div class="match-time">
+                                <span class="time">22:00</span>
+                                <span class="countdown">19 kun qoldi</span>
+                            </div>
+                            <div class="team away">
+                                <div class="team-logo">ATM</div>
+                                <div class="team-name">Atletico Madrid</div>
+                            </div>
+                        </div>
+                        <div class="match-venue">
+                            <svg class="venue-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>Santiago Bernabéu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Tab -->
+            <div class="tab-content" id="results">
+                <div class="results-container">
+                    <div class="result-card">
+                        <div class="result-header">
+                            <span class="result-competition">La Liga</span>
+                            <span class="result-date">2025-05-10</span>
+                        </div>
+                        <div class="result-teams">
+                            <div class="team">
+                                <div class="team-logo">RM</div>
+                                <div class="team-name">Real Madrid</div>
+                            </div>
+                            <div class="result-score">
+                                <span class="score">3 - 1</span>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo">SEV</div>
+                                <div class="team-name">Sevilla</div>
+                            </div>
+                        </div>
+                        <div class="result-scorers">
+                            <div class="scorer">⚽ Mbappé 15', 67'</div>
+                            <div class="scorer">⚽ Bellingham 45'</div>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-header">
+                            <span class="result-competition">La Liga</span>
+                            <span class="result-date">2025-05-05</span>
+                        </div>
+                        <div class="result-teams">
+                            <div class="team">
+                                <div class="team-logo">VAL</div>
+                                <div class="team-name">Valencia</div>
+                            </div>
+                            <div class="result-score">
+                                <span class="score">0 - 2</span>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo">RM</div>
+                                <div class="team-name">Real Madrid</div>
+                            </div>
+                        </div>
+                        <div class="result-scorers">
+                            <div class="scorer">⚽ Vinícius Jr. 23'</div>
+                            <div class="scorer">⚽ Rodrygo 78'</div>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-header">
+                            <span class="result-competition">UEFA Champions League</span>
+                            <span class="result-date">2025-04-30</span>
+                        </div>
+                        <div class="result-teams">
+                            <div class="team">
+                                <div class="team-logo">RM</div>
+                                <div class="team-name">Real Madrid</div>
+                            </div>
+                            <div class="result-score">
+                                <span class="score">4 - 1</span>
+                            </div>
+                            <div class="team">
+                                <div class="team-logo">PSG</div>
+                                <div class="team-name">PSG</div>
+                            </div>
+                        </div>
+                        <div class="result-scorers">
+                            <div class="scorer">⚽ Mbappé 12', 34', 89'</div>
+                            <div class="scorer">⚽ Bellingham 56'</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- League Table Tab -->
+            <div class="tab-content" id="table">
+                <div class="table-container">
+                    <h3 class="table-title">La Liga 2024/25</h3>
+                    <div class="league-table">
+                        <div class="table-header">
+                            <div class="pos">#</div>
+                            <div class="team">Jamoa</div>
+                            <div class="played">O'yin</div>
+                            <div class="won">G'alaba</div>
+                            <div class="drawn">Durrang</div>
+                            <div class="lost">Mag'lubiyat</div>
+                            <div class="points">Ochko</div>
+                        </div>
+                        <div class="table-row champion">
+                            <div class="pos">1</div>
+                            <div class="team">
+                                <div class="team-logo">RM</div>
+                                <span>Real Madrid</span>
+                            </div>
+                            <div class="played">32</div>
+                            <div class="won">25</div>
+                            <div class="drawn">5</div>
+                            <div class="lost">2</div>
+                            <div class="points">80</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="pos">2</div>
+                            <div class="team">
+                                <div class="team-logo">BAR</div>
+                                <span>Barcelona</span>
+                            </div>
+                            <div class="played">32</div>
+                            <div class="won">22</div>
+                            <div class="drawn">6</div>
+                            <div class="lost">4</div>
+                            <div class="points">72</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="pos">3</div>
+                            <div class="team">
+                                <div class="team-logo">ATM</div>
+                                <span>Atletico Madrid</span>
+                            </div>
+                            <div class="played">32</div>
+                            <div class="won">20</div>
+                            <div class="drawn">8</div>
+                            <div class="lost">4</div>
+                            <div class="points">68</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="pos">4</div>
+                            <div class="team">
+                                <div class="team-logo">SEV</div>
+                                <span>Sevilla</span>
+                            </div>
+                            <div class="played">32</div>
+                            <div class="won">18</div>
+                            <div class="drawn">7</div>
+                            <div class="lost">7</div>
+                            <div class="points">61</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="pos">5</div>
+                            <div class="team">
+                                <div class="team-logo">VIL</div>
+                                <span>Villarreal</span>
+                            </div>
+                            <div class="played">32</div>
+                            <div class="won">16</div>
+                            <div class="drawn">9</div>
+                            <div class="lost">7</div>
+                            <div class="points">57</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Scorers Tab -->
+            <div class="tab-content" id="scorers">
+                <div class="scorers-container">
+                    <h3 class="scorers-title">Eng Ko'p Gol Urganlar</h3>
+                    <div class="scorers-list">
+                        <div class="scorer-card top-scorer">
+                            <div class="scorer-rank">1</div>
+                            <div class="scorer-info">
+                                <div class="scorer-name">Kylian Mbappé</div>
+                                <div class="scorer-team">Real Madrid</div>
+                            </div>
+                            <div class="scorer-goals">28</div>
+                        </div>
+                        <div class="scorer-card">
+                            <div class="scorer-rank">2</div>
+                            <div class="scorer-info">
+                                <div class="scorer-name">Vinícius Júnior</div>
+                                <div class="scorer-team">Real Madrid</div>
+                            </div>
+                            <div class="scorer-goals">22</div>
+                        </div>
+                        <div class="scorer-card">
+                            <div class="scorer-rank">3</div>
+                            <div class="scorer-info">
+                                <div class="scorer-name">Jude Bellingham</div>
+                                <div class="scorer-team">Real Madrid</div>
+                            </div>
+                            <div class="scorer-goals">18</div>
+                        </div>
+                        <div class="scorer-card">
+                            <div class="scorer-rank">4</div>
+                            <div class="scorer-info">
+                                <div class="scorer-name">Robert Lewandowski</div>
+                                <div class="scorer-team">Barcelona</div>
+                            </div>
+                            <div class="scorer-goals">17</div>
+                        </div>
+                        <div class="scorer-card">
+                            <div class="scorer-rank">5</div>
+                            <div class="scorer-info">
+                                <div class="scorer-name">Rodrygo</div>
+                                <div class="scorer-team">Real Madrid</div>
+                            </div>
+                            <div class="scorer-goals">15</div>
+                        </div>
+                        <div class="scorer-card">
+                            <div class="scorer-rank">6</div>
+                            <div class="scorer-info">
+                                <div class="scorer-name">Antoine Griezmann</div>
+                                <div class="scorer-team">Atletico Madrid</div>
+                            </div>
+                            <div class="scorer-goals">14</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg class="trophy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                            <path d="M4 22h16"/>
+                            <path d="M10 14.66V17c0 .55.47.98.97 1.21C12.15 18.75 14 20 16 20s3.85-1.25 5.03-1.79c.5-.23.97-.66.97-1.21v-2.34"/>
+                            <path d="M20 7v5c0 1.1-.9 2-2 2H6a2 2 0 0 1-2-2V7"/>
+                            <rect width="20" height="4" x="2" y="3" rx="1"/>
+                        </svg>
+                        <span class="footer-logo-text">Real Madrid UZ</span>
+                    </div>
+                    <p class="footer-description">
+                        Real Madrid klubi muxlislari uchun O'zbekistondagi rasmiy fan-sayti.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Tezkor Havolalar</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Bosh Sahifa</a></li>
+                        <li><a href="index.html#news">Yangiliklar</a></li>
+                        <li><a href="index.html#team">Jamoa</a></li>
+                        <li><a href="#">Jadval</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Bog'lanish</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span>info@realmadriduz.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>+998 71 123 4567</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Real Madrid UZ. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="schedule.js"></script>
+</body>
+</html>
